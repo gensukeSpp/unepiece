@@ -1,0 +1,55 @@
+h1 {
+  display: none;
+}
+
+#container {
+  width: 100%;
+}
+#container header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: inherit;
+  background-color: black;
+}
+#container header .head-left {
+  flex: 0 0 62.5%;
+}
+#container header .head-left #h-left-memu {
+  display: inline-block;
+}
+#container header .head-right {
+  flex: 0 0 23%;
+}
+#container header .head-right #h-right-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+#container header .head-right #h-right-menu a {
+  color: white;
+}
+#container header .head-right #h-right-banner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+#container header .head-right P {
+  color: white;
+}
+#container main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#container main aside#news {
+  flex: 0 0 62.5%;
+}
+#container main aside#news section .red-belt {
+  background-image: url(./img/h_bg.png);
+}
+#container main aside#news section > article {
+  border: 1px solid black;
+}
+#container main nav {
+  flex: 0 0 23%;
+}/*# sourceMappingURL=style.css.map */
