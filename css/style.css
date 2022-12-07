@@ -11,22 +11,53 @@ h1 {
   justify-content: center;
   width: inherit;
   background-color: black;
+  padding-top: 15px;
 }
 #container header .head-left {
   flex: 0 0 62.5%;
+  position: relative;
 }
-#container header .head-left #h-left-memu {
-  display: inline-block;
+#container header .head-left #h-left-menu {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 15%;
+  position: absolute;
+}
+#container header .head-left #h-left-menu a:nth-child(1) {
+  flex: 0 0 25%;
+  text-align: center;
+}
+#container header .head-left #h-left-menu a:nth-child(2) {
+  flex: 1 0 25%;
+  text-align: center;
+}
+#container header .head-left #h-left-menu a:nth-child(3) {
+  flex: 2 0 25%;
+  text-align: center;
+}
+#container header .head-left img.top-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 #container header .head-right {
   flex: 0 0 23%;
+  margin-left: 2%;
 }
 #container header .head-right #h-right-menu {
   display: flex;
   flex-wrap: wrap;
 }
-#container header .head-right #h-right-menu a {
+#container header .head-right #h-right-menu a:nth-child(-n+3) {
+  flex: 0 0 33%;
   color: white;
+  text-align: center;
+}
+#container header .head-right #h-right-menu a:nth-child(n+4) {
+  flex: 0 0 50%;
+  color: white;
+  text-align: center;
 }
 #container header .head-right #h-right-banner {
   display: flex;
@@ -41,15 +72,36 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
+#container main h3 {
+  color: red;
+}
 #container main aside#news {
   flex: 0 0 62.5%;
 }
 #container main aside#news section .red-belt {
-  background-image: url(./img/h_bg.png);
+  background-image: url(../img/h_bg.png);
+  color: white;
 }
-#container main aside#news section > article {
+#container main aside#news section article {
   border: 1px solid black;
+}
+#container main aside#news section article.feature .image-line {
+  display: inline-block;
+}
+#container main aside#news section article.gift-inner img {
+  float: left;
 }
 #container main nav {
   flex: 0 0 23%;
+  margin-left: 2%;
+}
+#container main nav .red-belt {
+  background-image: url(../img/h_bg.png);
+  color: white;
+}
+#container footer {
+  background-color: black;
+}
+#container footer p.copyright {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
