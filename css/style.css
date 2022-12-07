@@ -36,6 +36,10 @@ h1 {
   flex: 2 0 25%;
   text-align: center;
 }
+#container header .head-left #h-left-menu a img {
+  position: relative;
+  top: 20%;
+}
 #container header .head-left img.top-image {
   -o-object-fit: contain;
      object-fit: contain;
@@ -43,44 +47,64 @@ h1 {
 }
 #container header .head-right {
   flex: 0 0 23%;
+  padding: 7px 0;
   margin-left: 2%;
 }
 #container header .head-right #h-right-menu {
   display: flex;
   flex-wrap: wrap;
 }
-#container header .head-right #h-right-menu a:nth-child(-n+3) {
-  flex: 0 0 33%;
+#container header .head-right #h-right-menu a {
+  font-size: 14px;
   color: white;
   text-align: center;
 }
+#container header .head-right #h-right-menu a:nth-child(-n+3) {
+  flex: 0 0 33%;
+}
 #container header .head-right #h-right-menu a:nth-child(n+4) {
   flex: 0 0 50%;
-  color: white;
-  text-align: center;
 }
 #container header .head-right #h-right-banner {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
+#container header .head-right #h-right-banner a {
+  width: 100%;
+}
+#container header .head-right #h-right-banner a img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: inherit;
+}
 #container header .head-right P {
+  font-size: 15px;
   color: white;
+  text-align: center;
+  margin-top: 3%;
 }
 #container main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#container main h3 {
-  color: red;
-}
 #container main aside#news {
   flex: 0 0 62.5%;
 }
+#container main aside#news h3 {
+  max-width: 235px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em;
+}
 #container main aside#news section .red-belt {
   background-image: url(../img/h_bg.png);
+  background-repeat: no-repeat;
+  max-width: 235px;
   color: white;
+  text-align: center;
 }
 #container main aside#news section article {
   border: 1px solid black;
@@ -97,7 +121,17 @@ h1 {
 }
 #container main nav .red-belt {
   background-image: url(../img/h_bg.png);
+  background-repeat: no-repeat;
+  max-width: 235px;
   color: white;
+  text-align: center;
+}
+#container main nav h3 {
+  max-width: 235px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em;
 }
 #container footer {
   background-color: black;

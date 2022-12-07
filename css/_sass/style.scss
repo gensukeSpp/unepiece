@@ -12,6 +12,22 @@
 @mixin border-box {
     border: 1px solid black;
 }
+@mixin red-title {
+    .red-belt {
+        background-image: url(../img/h_bg.png);
+        background-repeat: no-repeat;
+        max-width: 235px;
+        color: white;
+        text-align: center;
+    }
+}
+@mixin h3-parts {
+    max-width: 235px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+}
 
 h1 { display: none; }
 #container {
@@ -47,6 +63,10 @@ h1 { display: none; }
                     @include flex-col(25%, 2, 0);
                     text-align: center;
                 }
+                a img {
+                    position: relative;
+                    top: 20%;
+                }
             }
             img.top-image {
                 object-fit: contain;
@@ -55,28 +75,40 @@ h1 { display: none; }
         }
         .head-right {
             @include flex-col(23%);
+            padding: 7px 0;
             margin-left: 2%;
             #h-right-menu {
                 display: flex;
                 flex-wrap: wrap;
-                a:nth-child(-n+3) {
-                    @include flex-col(33%);
+                a {
+                    font-size: 14px;
                     color: white;
                     text-align: center;
                 }
+                a:nth-child(-n+3) {
+                    @include flex-col(33%);
+                }
                 a:nth-child(n+4) {
                     @include flex-col(50%);
-                    color: white;
-                    text-align: center;
                 }
             }
             #h-right-banner {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
+                a {
+                    width: 100%;
+                    img {
+                        object-fit: contain;
+                        width: inherit;
+                    }
+                }
             }
             P {
+                font-size: 15px;
                 color: white;
+                text-align: center;
+                margin-top: 3%;
             }
         }
     }
@@ -84,16 +116,13 @@ h1 { display: none; }
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        h3 {
-            color: red;
-        }
         aside#news {
             @include flex-col(62.5%);
+            h3 {
+                @include h3-parts;
+            }    
             section {
-                .red-belt {
-                    background-image: url(../img/h_bg.png);
-                    color: white
-                }
+                @include red-title;
                 article {
                     @include border-box;    
                 }
@@ -112,9 +141,9 @@ h1 { display: none; }
         nav {
             @include flex-col(23%);
             margin-left: 2%;
-            .red-belt {
-                background-image: url(../img/h_bg.png);
-                color: white;
+            @include red-title;
+            h3 {
+                @include h3-parts;
             }
         }
     }
