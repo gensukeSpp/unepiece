@@ -1,8 +1,14 @@
+:root {
+  --anchor-reset: underline;
+  --list-reset: disc;
+}
+
 h1 {
   display: none;
 }
 
 #container {
+  font-family: "Noto Serif JP", serif;
   width: 100%;
 }
 #container header {
@@ -11,7 +17,7 @@ h1 {
   justify-content: center;
   width: inherit;
   background-color: black;
-  padding-top: 15px;
+  padding: 15px 0;
 }
 #container header .head-left {
   flex: 0 0 62.5%;
@@ -47,12 +53,12 @@ h1 {
 }
 #container header .head-right {
   flex: 0 0 23%;
-  padding: 7px 0;
   margin-left: 2%;
 }
 #container header .head-right #h-right-menu {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 7px;
 }
 #container header .head-right #h-right-menu a {
   font-size: 14px;
@@ -69,9 +75,11 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin: 9px 0 11px 0;
 }
 #container header .head-right #h-right-banner a {
   width: 100%;
+  margin-bottom: 2%;
 }
 #container header .head-right #h-right-banner a img {
   -o-object-fit: contain;
@@ -82,12 +90,12 @@ h1 {
   font-size: 15px;
   color: white;
   text-align: center;
-  margin-top: 3%;
 }
 #container main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 33px;
 }
 #container main aside#news {
   flex: 0 0 62.5%;
@@ -97,7 +105,7 @@ h1 {
   color: red;
   font-weight: bold;
   text-align: center;
-  padding: 1em;
+  margin-bottom: 9px;
 }
 #container main aside#news section .red-belt {
   background-image: url(../img/h_bg.png);
@@ -108,6 +116,8 @@ h1 {
 }
 #container main aside#news section article {
   border: 1px solid black;
+  padding: 11px;
+  margin-bottom: 2%;
 }
 #container main aside#news section article.feature .image-line {
   display: inline-block;
@@ -131,7 +141,12 @@ h1 {
   color: red;
   font-weight: bold;
   text-align: center;
-  padding: 1em;
+  margin-bottom: 9px;
+}
+#container main nav ul:nth-of-type(3) {
+  border: 1px solid black;
+  padding: 12px;
+  list-style: var(--list-reset);
 }
 #container footer {
   background-color: black;

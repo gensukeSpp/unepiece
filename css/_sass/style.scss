@@ -1,16 +1,16 @@
 @charset 'utf-8';
 
-// @mixin left-w {
-//     flex: 0 0 62.5%;
-// }
-// @mixin right-w {
-//     flex: 0 0 23%;
-// }
+:root {
+    --anchor-reset: underline;
+    --list-reset: disc;
+}
+
 @mixin flex-col($ratio, $distribute1: 0, $distribute2: 0) {
     flex: $distribute1 $distribute2 $ratio;
 }
-@mixin border-box {
+@mixin border-box($space) {
     border: 1px solid black;
+    padding: $space
 }
 @mixin red-title {
     .red-belt {
@@ -26,11 +26,12 @@
     color: red;
     font-weight: bold;
     text-align: center;
-    padding: 1em;
+    margin-bottom: 9px;
 }
 
 h1 { display: none; }
 #container {
+    font-family: 'Noto Serif JP', serif;
     width: 100%;
     header {
         display: flex;
@@ -38,7 +39,7 @@ h1 { display: none; }
         justify-content: center;
         width: inherit;
         background-color: black;
-        padding-top: 15px;
+        padding: 15px 0;
         .head-left {
             @include flex-col(62.5%);
             position: relative;
@@ -75,11 +76,11 @@ h1 { display: none; }
         }
         .head-right {
             @include flex-col(23%);
-            padding: 7px 0;
             margin-left: 2%;
             #h-right-menu {
                 display: flex;
                 flex-wrap: wrap;
+                margin-top: 7px;
                 a {
                     font-size: 14px;
                     color: white;
@@ -96,8 +97,10 @@ h1 { display: none; }
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
+                margin: 9px 0 11px 0;
                 a {
                     width: 100%;
+                    margin-bottom: 2%;
                     img {
                         object-fit: contain;
                         width: inherit;
@@ -108,7 +111,7 @@ h1 { display: none; }
                 font-size: 15px;
                 color: white;
                 text-align: center;
-                margin-top: 3%;
+                // margin-top: 3%;
             }
         }
     }
@@ -116,6 +119,7 @@ h1 { display: none; }
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 33px;
         aside#news {
             @include flex-col(62.5%);
             h3 {
@@ -124,7 +128,8 @@ h1 { display: none; }
             section {
                 @include red-title;
                 article {
-                    @include border-box;    
+                    @include border-box(11px);
+                    margin-bottom: 2%;  
                 }
                 article.feature {
                     .image-line {
@@ -144,6 +149,10 @@ h1 { display: none; }
             @include red-title;
             h3 {
                 @include h3-parts;
+            }
+            ul:nth-of-type(3) {
+                @include border-box(12px);
+                list-style: var(--list-reset);
             }
         }
     }
