@@ -110,6 +110,7 @@ h1 { display: none; }
             P {
                 font-size: 15px;
                 color: white;
+                // font-family: 'メイリオ';
                 text-align: center;
                 // margin-top: 3%;
             }
@@ -129,16 +130,44 @@ h1 { display: none; }
                 @include red-title;
                 article {
                     @include border-box(11px);
-                    margin-bottom: 2%;  
-                }
-                article.feature {
-                    .image-line {
-                        display: inline-block;
+                    margin-bottom: 2%;
+                    a {
+                        text-decoration: var(--anchor-reset);
+                        font-size: 13px;
                     }
                 }
-                article.gift-inner {
+                article.feature {
+                    p {
+                        font-size: 13px;
+                    }
+                    .image-line {
+                        display: inline-block;
+                        img {
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+            section.gift {
+                article#gift-inner {
+                    display: flex;
+                    flex-wrap: wrap;
                     img {
-                        float: left;
+                        @include flex-col(21%);
+                        margin-right: 11px;
+                        // float:left;
+                        // &::after {
+                        //     content: "";
+                        //     display: block;
+                        //     clear: both;                        
+                        // }
+                    }
+                    .detail {
+                        @include flex-col(52%);
+                        // float: right;
+                        dl > * {
+                            font-size: 13px;
+                        }
                     }
                 }
             }
@@ -149,6 +178,13 @@ h1 { display: none; }
             @include red-title;
             h3 {
                 @include h3-parts;
+            }
+            ul {
+                padding: 0.8em;
+                margin-bottom: 0.8em;
+                li a {
+                    font-size: 13px;
+                }
             }
             ul:nth-of-type(3) {
                 @include border-box(12px);
