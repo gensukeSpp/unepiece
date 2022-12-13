@@ -128,9 +128,9 @@ h1 { display: none; }
             }    
             section {
                 @include red-title;
+                margin-bottom: 2%;
                 article {
-                    @include border-box(11px);
-                    margin-bottom: 2%;
+                    @include border-box(11px);                    
                     a {
                         text-decoration: var(--anchor-reset);
                         font-size: 13px;
@@ -149,12 +149,15 @@ h1 { display: none; }
                 }
             }
             section.gift {
-                article#gift-inner {
+                article#gift-inner div {
                     display: flex;
                     flex-wrap: wrap;
+                    &:nth-child(2) {
+                        margin: 2% 0 2% 0;
+                    }
                     img {
-                        @include flex-col(21%);
-                        margin-right: 11px;
+                        @include flex-col(24%);
+                        margin-right: 10px;
                         // float:left;
                         // &::after {
                         //     content: "";
@@ -163,11 +166,16 @@ h1 { display: none; }
                         // }
                     }
                     .detail {
-                        @include flex-col(52%);
+                        @include flex-col(51%);
                         // float: right;
                         dl > * {
                             font-size: 13px;
                         }
+                    }
+                    a {
+                        position: relative;
+                        /* デフォルトの高さ-フォントサイズ */
+                        top: 104px;
                     }
                 }
             }
@@ -186,16 +194,27 @@ h1 { display: none; }
                     font-size: 13px;
                 }
             }
-            ul:nth-of-type(3) {
-                @include border-box(12px);
+            ul.about {
+                @include border-box(0);
                 list-style: var(--list-reset);
+                list-style-position: inside;
+                padding: 12px;
+                li {
+                    a p {
+                        padding-left: 1rem;
+                    }
+                }
             }
         }
     }
     footer {
         background-color: black;
         p.copyright {
+            width: 85.5%;
+            font-size: 9px;
             color: white;
+            text-align: right;
+            margin: 0 auto;
         }
     }
 }

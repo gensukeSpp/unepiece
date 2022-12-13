@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --anchor-reset: underline;
   --list-reset: disc;
@@ -107,6 +108,9 @@ h1 {
   text-align: center;
   margin-bottom: 9px;
 }
+#container main aside#news section {
+  margin-bottom: 2%;
+}
 #container main aside#news section .red-belt {
   background-image: url(../img/h_bg.png);
   background-repeat: no-repeat;
@@ -117,7 +121,6 @@ h1 {
 #container main aside#news section article {
   border: 1px solid black;
   padding: 11px;
-  margin-bottom: 2%;
 }
 #container main aside#news section article a {
   -webkit-text-decoration: var(--anchor-reset);
@@ -133,19 +136,27 @@ h1 {
 #container main aside#news section article.feature .image-line img {
   padding-right: 10px;
 }
-#container main aside#news section.gift article#gift-inner {
+#container main aside#news section.gift article#gift-inner div {
   display: flex;
   flex-wrap: wrap;
 }
-#container main aside#news section.gift article#gift-inner img {
-  flex: 0 0 21%;
-  margin-right: 11px;
+#container main aside#news section.gift article#gift-inner div:nth-child(2) {
+  margin: 2% 0 2% 0;
 }
-#container main aside#news section.gift article#gift-inner .detail {
-  flex: 0 0 52%;
+#container main aside#news section.gift article#gift-inner div img {
+  flex: 0 0 24%;
+  margin-right: 10px;
 }
-#container main aside#news section.gift article#gift-inner .detail dl > * {
+#container main aside#news section.gift article#gift-inner div .detail {
+  flex: 0 0 51%;
+}
+#container main aside#news section.gift article#gift-inner div .detail dl > * {
   font-size: 13px;
+}
+#container main aside#news section.gift article#gift-inner div a {
+  position: relative;
+  /* デフォルトの高さ-フォントサイズ */
+  top: 104px;
 }
 #container main nav {
   flex: 0 0 23%;
@@ -172,14 +183,23 @@ h1 {
 #container main nav ul li a {
   font-size: 13px;
 }
-#container main nav ul:nth-of-type(3) {
+#container main nav ul.about {
   border: 1px solid black;
-  padding: 12px;
+  padding: 0;
   list-style: var(--list-reset);
+  list-style-position: inside;
+  padding: 12px;
+}
+#container main nav ul.about li a p {
+  padding-left: 1rem;
 }
 #container footer {
   background-color: black;
 }
 #container footer p.copyright {
+  width: 85.5%;
+  font-size: 9px;
   color: white;
+  text-align: right;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */
