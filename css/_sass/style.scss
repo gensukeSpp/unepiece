@@ -28,6 +28,13 @@
     text-align: center;
     margin-bottom: 9px;
 }
+@mixin article-area($font-sizing) {
+    font-size: $font-sizing;
+    /* 文字+下空間 */
+    // height: 22px;
+    padding-bottom: 9px;
+    line-height: $font-sizing;
+}
 
 h1 { display: none; }
 #container {
@@ -37,6 +44,7 @@ h1 { display: none; }
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         width: inherit;
         background-color: black;
         padding: 15px 0;
@@ -52,6 +60,10 @@ h1 { display: none; }
                 height: 15%;
                 position: absolute;
                 // top: 3%;
+                a {
+                    background-color: black;
+                    opacity: .5;
+                }
                 a:nth-child(1) {
                     @include flex-col(25%, 0, 0);
                     text-align: center;
@@ -130,15 +142,19 @@ h1 { display: none; }
                 @include red-title;
                 margin-bottom: 2%;
                 article {
-                    @include border-box(11px);                    
+                    width: 100%;
+                    @include border-box(11px);                   
                     a {
                         text-decoration: var(--anchor-reset);
                         font-size: 13px;
+                        position: relative;
+                        bottom: 3px;
                     }
                 }
                 article.feature {
                     p {
-                        font-size: 13px;
+                        width: inherit;
+                        @include article-area(13px);
                     }
                     .image-line {
                         display: inline-block;
@@ -152,32 +168,44 @@ h1 { display: none; }
                 article#gift-inner div {
                     display: flex;
                     flex-wrap: wrap;
-                    &:nth-child(2) {
+                    &.middle {
                         margin: 2% 0 2% 0;
                     }
-                    img {
+                    .inside-image {
                         @include flex-col(24%);
+                        align-items: flex-start;
                         margin-right: 10px;
-                        // float:left;
-                        // &::after {
-                        //     content: "";
-                        //     display: block;
-                        //     clear: both;                        
-                        // }
+                        img {
+                            object-fit: contain;
+                            width: inherit;
+                            // float:left;
+                            // &::after {
+                            //     content: "";
+                            //     display: block;
+                            //     clear: both;                        
+                            // }
+                        }
                     }
                     .detail {
                         @include flex-col(51%);
                         // float: right;
                         dl > * {
-                            font-size: 13px;
+                            @include article-area(13px);
+                            p {
+                                /* 文字+下空間 */
+                                height: 22px;
+                            }
                         }
                     }
                     a {
+                        height: 19px;
                         position: relative;
                         /* デフォルトの高さ-フォントサイズ */
                         top: 104px;
-                    }
+                    }    
                 }
+                // article#gift-inner a {
+                // }
             }
         }
         nav {
@@ -208,6 +236,7 @@ h1 { display: none; }
         }
     }
     footer {
+        height: 32px;
         background-color: black;
         p.copyright {
             width: 85.5%;
@@ -215,6 +244,7 @@ h1 { display: none; }
             color: white;
             text-align: right;
             margin: 0 auto;
+            line-height: 32px;
         }
     }
 }
