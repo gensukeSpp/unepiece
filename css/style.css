@@ -33,8 +33,11 @@ h1 {
   position: absolute;
 }
 #container header .head-left #h-left-menu a {
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* rgbaではなく、下記指定なら文字透ける */
+}
+#container header .head-left #h-left-menu a:hover {
+  background-color: initial;
 }
 #container header .head-left #h-left-menu a:nth-child(1) {
   flex: 0 0 25%;
@@ -156,7 +159,7 @@ h1 {
   margin: 2% 0 2% 0;
 }
 #container main aside#news section.gift article#gift-inner div .inside-image {
-  flex: 0 0 24%;
+  flex: 0 0 22%;
   align-items: flex-start;
   margin-right: 10px;
 }
@@ -175,14 +178,19 @@ h1 {
   line-height: 13px;
 }
 #container main aside#news section.gift article#gift-inner div .detail dl > * p {
+  font-size: 13px;
   /* 文字+下空間 */
-  height: 22px;
+  padding-bottom: 9px;
+  line-height: 13px;
 }
 #container main aside#news section.gift article#gift-inner div a {
   height: 19px;
   position: relative;
   /* デフォルトの高さ-フォントサイズ */
   top: 104px;
+}
+#container main aside#news section.gift article#gift-inner div:nth-child(3) .detail {
+  flex: 0 0 48%;
 }
 #container main nav {
   flex: 0 0 23%;
